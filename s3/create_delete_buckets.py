@@ -18,5 +18,5 @@ def delete_bucket(bucket_name):
     print(f'Delete bucket {bucket_name}')
 
 
-# create_bucket('newbucket2114')
-delete_bucket('newbucket2114')
+create_bucket('newbucket2114')
+# delete_bucket('newbucket2114')

@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+ec2keys.pem
+sample.txt
 
 # C extensions
 *.so
