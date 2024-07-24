@@ -65,7 +65,6 @@ def update_title(artist, old_title, new_title):
     dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
     table = dynamodb.Table('Music')
 
-    # Retrieve the current item
     item = get_item(artist, old_title)
     if not item:
         print(f'Item with artist {artist} and title {old_title} not found')
@@ -83,4 +82,15 @@ if __name__ == '__main__':
     # add_item('VNM', 'EDKT')
     # get_item('VNM', 'EDKT')
     # delete_item('VNM', 'EDKT')
-    update_title('VNM', 'EDKT', 'PROPEJN')
+    # update_title('VNM', 'EDKT', 'PROPEJN')
+
+    items = [
+        {'Artist': 'VNM', 'Title': 'EDKT'},
+        {'Artist': 'VNM', 'Title': 'PROPEJN'},
+        {'Artist': 'Artist2', 'Title': 'Song1'},
+        {'Artist': 'Artist2', 'Title': 'Song2'},
+        {'Artist': 'Artist3', 'Title': 'Track1'},
+    ]
+
+    for item in items:
+        add_item(item['Artist'], item['Title'])
